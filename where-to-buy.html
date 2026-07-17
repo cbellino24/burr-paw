@@ -56,16 +56,43 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="section__eyebrow">Dealer Locator</p>
-        <h1>Where to Buy</h1>
-        <p>Search by city or zip to find Burr Paw near you. Starting with Omaha retail partners — more locations coming soon.</p>
+    <section class="buy-hero" aria-labelledby="buy-title">
+      <div class="container buy-hero__inner">
+        <div class="buy-hero__copy">
+          <p class="section__eyebrow">Dealer locator</p>
+          <h1 class="buy-hero__title" id="buy-title">Where to Buy</h1>
+          <p class="buy-hero__lead">Find Burr Paw at retail partners near you — or shop direct online with free shipping on orders of $50+.</p>
+        </div>
+        <ul class="buy-hero__meta" aria-label="Buying options">
+          <li><span>In store</span> Search by city or zip</li>
+          <li><span>Online</span> Ship straight to your door</li>
+          <li><span>Omaha first</span> More locations coming soon</li>
+        </ul>
       </div>
     </section>
+
+    <section class="section buy-direct" aria-label="Shop online">
+      <div class="container buy-direct__inner" data-reveal>
+        <div>
+          <p class="section__eyebrow">Skip the drive</p>
+          <h2 class="section__title">Shop Burr Paw online</h2>
+          <p class="section__lead">All three colorways ship from Nebraska. Free shipping on orders of $50+.</p>
+        </div>
+        <a class="btn btn--dark" href="shop.html">Shop Now</a>
+      </div>
+    </section>
+
     <section class="locations-page" aria-label="Location search and results">
       <div class="container">
-        <div class="location-finder" id="location-finder">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="section__eyebrow">Find a store</p>
+            <h2 class="section__title">Retail partners near you</h2>
+          </div>
+          <p class="section__lead">Enter a city or zip, set your radius, and we’ll show partners carrying Burr Paw on the map.</p>
+        </div>
+
+        <div class="location-finder" id="location-finder" data-reveal>
           <div class="location-finder__toolbar">
             <form class="location-finder__search" id="location-search-form" role="search">
               <label class="location-finder__label" for="location-search">Location</label>
@@ -107,19 +134,32 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <section class="locations-featured" aria-labelledby="locations-featured-title">
-          <div class="locations-featured__head">
-            <h2 class="locations-featured__title" id="locations-featured-title">Featured Locations</h2>
-            <p class="section__lead">Omaha partners carrying Burr Paw today.</p>
+    <section class="section section--stone locations-featured" aria-labelledby="locations-featured-title">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="section__eyebrow">Featured partners</p>
+            <h2 class="section__title" id="locations-featured-title">Carrying Burr Paw today</h2>
           </div>
-          <div class="locations-featured__grid" id="location-featured"></div>
-        </section>
+          <p class="section__lead">Omaha retail partners stocking the mitt now. Tap through to pin them on the map.</p>
+        </div>
+        <div class="locations-featured__grid" id="location-featured" data-reveal></div>
+      </div>
+    </section>
 
-        <div class="dealer-note">
-          <h3 style="margin-top:0;font-family:var(--font-display);font-size:1.35rem">Become a dealer</h3>
-          <p style="margin:0 0 1rem;color:var(--muted)">Interested in carrying Burr Paw, or know a store that should? Get in touch — we’d love to hear from you.</p>
+    <section class="section buy-dealer" aria-labelledby="dealer-title">
+      <div class="container buy-dealer__inner" data-reveal>
+        <div>
+          <p class="section__eyebrow">Wholesale &amp; retail</p>
+          <h2 class="section__title" id="dealer-title">Become a dealer</h2>
+          <p class="section__lead">Interested in carrying Burr Paw, or know a store that should? Get in touch. We’d love to hear from you.</p>
+        </div>
+        <div class="buy-dealer__actions">
           <a class="btn btn--dark" href="contact.html">Contact Us</a>
+          <a class="btn btn--outline" href="custom-logo.html">Custom logo orders</a>
         </div>
       </div>
     </section>

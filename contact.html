@@ -56,31 +56,124 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="section__eyebrow">Contact</p>
-        <h1>Contact Us</h1>
-        <p>Questions about orders, dealers, or custom logo branding? We’re happy to help.</p>
+    <section class="contact-mast" aria-labelledby="contact-title">
+      <div class="container contact-mast__inner">
+        <p class="contact-mast__eyebrow">Shipping worldwide</p>
+        <h1 class="contact-mast__title" id="contact-title">Say hello.</h1>
+        <p class="contact-mast__lead">Orders, dealers, custom logo programs, or a quick product question — reach the Burr Paw team directly.</p>
       </div>
     </section>
-    <section class="container contact-layout">
-      <div class="contact-details" data-reveal>
-        <h2>Talk to Burr Paw</h2>
-        <p><strong>Phone</strong><br><a href="tel:+14023708050">1 (402) 370-8050</a></p>
-        <p><strong>Email</strong><br><a href="mailto:Lindsey@Burrpaw.com">Lindsey@Burrpaw.com</a></p>
-        <p><strong>Address</strong><br>10705 Schram Road<br>Papillion, NE 68046</p>
-        <p class="form-note">Looking for custom logo pricing? Use our <a href="custom-logo.html">quote request form</a>.</p>
-      </div>
-      <form class="form" data-demo-form data-reveal>
-        <div class="form-row">
-          <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+
+    <section class="contact-channels" aria-label="Direct contact">
+      <div class="container contact-channels__grid">
+        <a class="contact-channel" href="tel:+14023708050">
+          <span class="contact-channel__label">Call</span>
+          <span class="contact-channel__value">1 (402) 370-8050</span>
+        </a>
+        <a class="contact-channel" href="mailto:Lindsey@Burrpaw.com">
+          <span class="contact-channel__label">Email</span>
+          <span class="contact-channel__value">Lindsey@Burrpaw.com</span>
+        </a>
+        <div class="contact-channel contact-channel--static">
+          <span class="contact-channel__label">Mailing</span>
+          <span class="contact-channel__value">10705 Schram Road<br>Papillion, NE 68046</span>
         </div>
-        <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-        <button class="btn btn--blaze" type="submit">Send Message</button>
-        <div class="form-success" role="status">Thanks — your message was recorded for this demo. On Shopify this will email the Burr Paw team.</div>
-      </form>
+      </div>
+    </section>
+
+    <section class="contact-compose" aria-labelledby="compose-title">
+      <div class="container contact-compose__grid">
+        <form class="form form--on-dark" data-demo-form data-reveal>
+          <div class="contact-compose__form-head">
+            <p class="section__eyebrow">Message</p>
+            <h2 class="contact-compose__title" id="compose-title">Write us a note</h2>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email">
+            </div>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="How can we help?"></textarea>
+          </div>
+          <button class="btn btn--ghost" type="submit">Send Message</button>
+          <div class="form-success form-success--on-dark" role="status">Thanks — your message was recorded for this demo. On Shopify this will email the Burr Paw team.</div>
+        </form>
+
+        <aside class="contact-aside" data-reveal>
+          <p class="contact-aside__eyebrow">Faster path?</p>
+          <h2 class="contact-aside__title">Jump to the right place</h2>
+          <ul class="contact-aside__links">
+            <li>
+              <a href="custom-logo.html">
+                <span>Custom logo quote</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="where-to-buy.html">
+                <span>Find a retail partner</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="shop.html">
+                <span>Shop Burr Paw online</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="use-and-care.html">
+                <span>Use &amp; care guide</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+          <p class="contact-aside__note">For branded quantity orders, the quote form is faster than a general message.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact-faq" aria-labelledby="faq-title">
+      <div class="container contact-faq__inner" data-reveal>
+        <div class="contact-faq__intro">
+          <p class="section__eyebrow">FAQ</p>
+          <h2 class="section__title" id="faq-title">Before you write</h2>
+          <p class="section__lead">Quick answers to the questions we hear most — so you can skip the wait when the info is already here.</p>
+        </div>
+        <div class="contact-faq__list">
+          <details class="contact-faq__item">
+            <summary>Do you ship worldwide?</summary>
+            <p>Yes. Burr Paw ships worldwide. Free shipping applies on orders of $50+ — see our <a href="policies/shipping-policy.html">shipping policy</a> for details.</p>
+          </details>
+          <details class="contact-faq__item">
+            <summary>How do I get a custom logo quote?</summary>
+            <p>Custom logoing is quote-only and not available in the cart. Use the <a href="custom-logo.html">custom logo quote form</a> with your quantity, colorway, and artwork notes.</p>
+          </details>
+          <details class="contact-faq__item">
+            <summary>Where can I buy Burr Paw in a store?</summary>
+            <p>Use the <a href="where-to-buy.html">dealer locator</a> to search by city or zip. We’re expanding retail partners beyond Omaha — more locations coming soon.</p>
+          </details>
+          <details class="contact-faq__item">
+            <summary>What’s your return policy?</summary>
+            <p>We stand behind the mitt. Review the <a href="policies/refund-policy.html">refund policy</a> for return windows and how to start a return.</p>
+          </details>
+          <details class="contact-faq__item">
+            <summary>How fast do you reply?</summary>
+            <p>We typically respond within 1–2 business days. For the fastest path on branding orders, use the quote form; for everything else, call or email works great too.</p>
+          </details>
+        </div>
+      </div>
     </section>
   </main>
 

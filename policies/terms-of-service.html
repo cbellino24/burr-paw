@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>Terms of Service — Burr Paw</title>
-  <meta name="description" content="Burr Paw website terms of service.">
+  <meta name="description" content="Burr Paw terms of service.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700" rel="stylesheet">
   <link rel="icon" href="../assets/images/brand/logo-mark.png" type="image/png">
   <link rel="stylesheet" href="../css/styles.css">
-
 </head>
 <body>
   <div class="announcement">
@@ -56,15 +55,40 @@
   </header>
 
   <main>
-    <section class="page-hero"><div class="container"><p class="section__eyebrow">Policies</p><h1>Terms of Service</h1></div></section>
-    <section class="policy container">
-    <p>These Terms of Service govern your use of burrpaw.com and the purchase of products offered on the Site.</p>
-    <h2>Overview</h2>
-    <p>By visiting our site and/or purchasing from us, you engage in our service and agree to be bound by these terms.</p>
-    <h2>Products</h2>
-    <p>We reserve the right to limit quantities and to discontinue products at any time. Product images may vary slightly from physical product colors.</p>
-    <p class="form-note">Full legal copy will be migrated from the live Shopify policy during the premium theme build.</p>
-  </section>
+    <section class="policy-hero" aria-labelledby="policy-title">
+      <div class="container policy-hero__inner">
+        <p class="section__eyebrow">Policies</p>
+        <h1 class="policy-hero__title" id="policy-title">Terms of Service</h1>
+        <p class="policy-hero__lead">The terms that govern your use of burrpaw.com and purchases from Burr Paw.</p>
+      </div>
+    </section>
+
+    <nav class="policy-nav" aria-label="Policy pages">
+      <div class="container policy-nav__inner">
+        <a href="refund-policy.html">Refund</a>
+        <a href="shipping-policy.html">Shipping</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html" aria-current="page">Terms</a>
+      </div>
+    </nav>
+
+    <section class="section policy-body">
+      <div class="container policy-body__layout" data-reveal>
+        <article class="policy">
+          <p class="policy__lede">These Terms of Service govern your use of burrpaw.com and the purchase of products offered on the Site.</p>
+          <h2>Overview</h2>
+          <p>By visiting our site and/or purchasing from us, you engage in our service and agree to be bound by these terms.</p>
+          <h2>Products</h2>
+          <p>We reserve the right to limit quantities and to discontinue products at any time. Product images may vary slightly from physical product colors.</p>
+          <p class="policy__note">Full legal copy will be migrated from the live Shopify policy during the premium theme build.</p>
+        </article>
+        <aside class="policy-aside">
+          <p class="policy-aside__label">Need help?</p>
+          <p class="policy-aside__text">Questions about these terms? We’re happy to walk through them with you.</p>
+          <a class="btn btn--dark" href="../contact.html">Contact Us</a>
+        </aside>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -90,10 +114,10 @@
         <div>
           <h4 class="footer-heading">Policies</h4>
           <ul class="footer-links">
-            <li><a href="../policies/refund-policy.html">Refund Policy</a></li>
-            <li><a href="../policies/shipping-policy.html">Shipping Policy</a></li>
-            <li><a href="../policies/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="../policies/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
           </ul>
         </div>
         <div>
@@ -120,6 +144,5 @@
     </div>
   </footer>
   <script src="../js/main.js" defer></script>
-
 </body>
 </html>

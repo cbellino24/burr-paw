@@ -155,6 +155,25 @@
     var playBtn = document.querySelector("[data-hero-play]");
     if (!video) return;
 
+    function markReady() {
+      video.classList.add("is-ready");
+    }
+
+    // Reveal once a real frame is available (avoids stale poster sitting "behind" playback)
+    if (video.readyState >= 2) {
+      markReady();
+    } else {
+      video.addEventListener("loadeddata", markReady, { once: true });
+      video.addEventListener("playing", markReady, { once: true });
+    }
+
+    var playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(function () {
+        markReady();
+      });
+    }
+
     if (muteBtn) {
       muteBtn.addEventListener("click", function () {
         video.muted = !video.muted;
@@ -264,6 +283,111 @@
     });
   }
 
+  function initReviewCarousel() {
+    var track = document.querySelector("[data-review-track]");
+    var prev = document.querySelector("[data-review-prev]");
+    var next = document.querySelector("[data-review-next]");
+    if (!track || !prev || !next) return;
+
+    function cardStep() {
+      var card = track.querySelector(".review");
+      if (!card) return 320;
+      var styles = window.getComputedStyle(track);
+      var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function updateButtons() {
+      var max = track.scrollWidth - track.clientWidth;
+      var x = track.scrollLeft;
+      prev.disabled = x <= 4;
+      next.disabled = x >= max - 4;
+    }
+
+    function scrollByDir(dir) {
+      track.scrollBy({ left: dir * cardStep(), behavior: "smooth" });
+    }
+
+    prev.addEventListener("click", function () {
+      scrollByDir(-1);
+    });
+    next.addEventListener("click", function () {
+      scrollByDir(1);
+    });
+    track.addEventListener("scroll", updateButtons, { passive: true });
+    window.addEventListener("resize", updateButtons);
+    updateButtons();
+  }
+
+  function initLogoLoop() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    document.querySelectorAll("[data-logo-loop]").forEach(function (stage) {
+      var frames = Array.prototype.slice.call(stage.querySelectorAll("img"));
+      if (frames.length < 2) return;
+
+      var caption = stage.parentElement
+        ? stage.parentElement.querySelector("[data-logo-caption]")
+        : null;
+      var index = frames.findIndex(function (img) {
+        return img.classList.contains("is-active");
+      });
+      if (index < 0) index = 0;
+
+      function show(next) {
+        frames.forEach(function (img, i) {
+          img.classList.toggle("is-active", i === next);
+        });
+        if (caption) {
+          var label = frames[next].getAttribute("data-caption") || "";
+          caption.classList.add("is-swapping");
+          window.setTimeout(function () {
+            caption.textContent = label;
+            caption.classList.remove("is-swapping");
+          }, 180);
+        }
+        index = next;
+      }
+
+      window.setInterval(function () {
+        show((index + 1) % frames.length);
+      }, 3200);
+    });
+  }
+
+  function initBookFilters() {
+    var root = document.querySelector("[data-book-filters]");
+    var grid = document.querySelector("[data-book-grid]");
+    if (!root || !grid) return;
+
+    var buttons = Array.prototype.slice.call(
+      root.querySelectorAll("[data-book-filter]")
+    );
+    var books = Array.prototype.slice.call(
+      grid.querySelectorAll("[data-book-category]")
+    );
+
+    function apply(filter) {
+      buttons.forEach(function (btn) {
+        var active = btn.getAttribute("data-book-filter") === filter;
+        btn.classList.toggle("is-active", active);
+        btn.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      books.forEach(function (book) {
+        var category = book.getAttribute("data-book-category");
+        var show = filter === "all" || category === filter;
+        book.classList.toggle("is-hidden", !show);
+      });
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        apply(btn.getAttribute("data-book-filter") || "all");
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     updateCartUI();
     initHeader();
@@ -273,5 +397,8 @@
     initDemoVideo();
     initQty();
     initAddButtons();
+    initReviewCarousel();
+    initLogoLoop();
+    initBookFilters();
   });
 })();
