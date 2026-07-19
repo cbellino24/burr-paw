@@ -9,7 +9,7 @@
   <meta name="description" content="Burr Paw is a mitten designed for fast and effective removal of stubborn stickers and burrs from clothing, gear, and pets.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/images/brand/logo-mark.png" type="image/png">
   <link rel="stylesheet" href="css/styles.css">
 
@@ -67,7 +67,7 @@
       <div class="hero-video__grain" aria-hidden="true"></div>
       <div class="hero-video__content hero-video__content--center">
         <p class="section__eyebrow">For anyone who works or plays in the rough</p>
-        <h1 class="hero-video__brand">Burr <span>Paw</span></h1>
+        <h1 class="hero-video__brand"><span class="hero-video__burr">Burr</span><span class="hero-video__paw">Paw</span></h1>
         <p class="hero-video__lead">Got burrs? Problem solved. Sweep stubborn stickers off clothing, gear, and pets without wrecking your fingers.</p>
         <div class="hero-video__actions">
           <a class="btn btn--blaze" href="shop.html">Shop Burr Paw</a>
@@ -98,10 +98,10 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--white">
       <div class="container pitch" data-reveal>
         <div class="pitch__visual">
-          <img src="assets/images/burr-pa-orange.jpg" alt="Burr Paw sticker remover in blaze orange" width="900" height="900">
+          <img src="assets/images/burr-paw-white-background-black.jpg" alt="Burr Paw sticker remover in black" width="900" height="900">
         </div>
         <div class="pitch__copy">
           <p class="section__eyebrow">The mitt that ends the mess</p>
@@ -162,18 +162,45 @@
           <p class="section__lead">Three colorways. One job: clean gear, clothing, and pets faster.</p>
         </div>
         <div class="swatch-grid" data-reveal>
-          <a class="swatch" href="products/burr-paw.html">
-            <div class="swatch__media swatch__media--fill"><img src="assets/images/burr-paw-black-2.jpg" alt="Burr Paw Black"></div>
-            <div class="swatch__meta"><h3 class="swatch__name">Black</h3><span class="swatch__price">$29.95</span></div>
-          </a>
-          <a class="swatch" href="products/burr-paw-tan-new-product.html">
-            <div class="swatch__media swatch__media--fill"><img src="assets/images/burr-paw-tan.jpg" alt="Burr Paw Tan"></div>
-            <div class="swatch__meta"><h3 class="swatch__name">Tan</h3><span class="swatch__price">$29.95</span></div>
-          </a>
-          <a class="swatch" href="products/burr-paw-blaze-orange-limited-edition.html">
-            <div class="swatch__media swatch__media--fill"><img src="assets/images/burr-pa-orange.jpg" alt="Burr Paw Blaze Orange"></div>
-            <div class="swatch__meta"><h3 class="swatch__name">Blaze Orange</h3><span class="swatch__price">$29.95</span></div>
-          </a>
+          <article class="swatch">
+            <a class="swatch__link" href="products/burr-paw.html">
+              <div class="swatch__media swatch__media--fill">
+                <span class="swatch__badge">Sale</span>
+                <img src="assets/images/burr-paw-black-2.jpg" alt="Burr Paw Black">
+              </div>
+              <div class="swatch__meta">
+                <h3 class="swatch__name">Black</h3>
+                <p class="swatch__price"><span class="swatch__price-sale">$21.95</span> <s class="swatch__price-compare">$31.95</s></p>
+              </div>
+            </a>
+            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1">Quick add</button>
+          </article>
+          <article class="swatch">
+            <a class="swatch__link" href="products/burr-paw-tan-new-product.html">
+              <div class="swatch__media swatch__media--fill">
+                <span class="swatch__badge">Sale</span>
+                <img src="assets/images/burr-paw-tan.jpg" alt="Burr Paw Tan">
+              </div>
+              <div class="swatch__meta">
+                <h3 class="swatch__name">Tan</h3>
+                <p class="swatch__price"><span class="swatch__price-sale">$21.95</span> <s class="swatch__price-compare">$31.95</s></p>
+              </div>
+            </a>
+            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1">Quick add</button>
+          </article>
+          <article class="swatch">
+            <a class="swatch__link" href="products/burr-paw-orange.html">
+              <div class="swatch__media swatch__media--fill">
+                <span class="swatch__badge">Sale</span>
+                <img src="assets/images/burr-pa-orange.jpg" alt="Burr Paw Orange">
+              </div>
+              <div class="swatch__meta">
+                <h3 class="swatch__name">Orange</h3>
+                <p class="swatch__price"><span class="swatch__price-sale">$21.95</span> <s class="swatch__price-compare">$31.95</s></p>
+              </div>
+            </a>
+            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1">Quick add</button>
+          </article>
         </div>
       </div>
     </section>
@@ -224,14 +251,14 @@
             >
             <img
               src="assets/images/Products/ORANGE-BURR-paw-no-logo.jpg"
-              alt="Burr Paw blaze orange without custom logo"
+              alt="Burr Paw orange without custom logo"
               width="900"
               height="1100"
               data-caption="Without logo"
             >
             <img
               src="assets/images/Products/ORANGE-BURR-PAW-with-logo.jpg"
-              alt="Burr Paw blaze orange with custom logo"
+              alt="Burr Paw orange with custom logo"
               width="900"
               height="1100"
               data-caption="With your logo"
@@ -362,13 +389,13 @@
       </div>
       <div class="social-feed__grid" data-reveal>
         <a class="social-feed__tile" href="https://www.instagram.com/explore/tags/burrpaw/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/burr-pa-orange.jpg" alt="Burr Paw blaze orange in the field" width="600" height="600" loading="lazy">
+          <img src="assets/images/burr-paw-ig-2.jpg" alt="Burr Paw orange in the field" width="600" height="600" loading="lazy">
         </a>
         <a class="social-feed__tile" href="https://www.instagram.com/explore/tags/burrpaw/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/burr-paw-image-dogs.jpg" alt="Dogs after a day in the rough" width="600" height="600" loading="lazy">
+          <img src="assets/images/Burr-paw-ig-1.jpg" alt="Dogs after a day in the rough" width="600" height="600" loading="lazy">
         </a>
         <a class="social-feed__tile" href="https://www.instagram.com/explore/tags/burrpaw/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/burr-paw-black-2.jpg" alt="Burr Paw black colorway" width="600" height="600" loading="lazy">
+          <img src="assets/images/burr-paw-ig-3.jpg" alt="Burr Paw black colorway" width="600" height="600" loading="lazy">
         </a>
       </div>
       <div class="container social-feed__foot" data-reveal>
@@ -382,6 +409,30 @@
     </section>
 
     <section class="section closeout-band" aria-label="Call to action">
+      <div class="closeout-band__slides" data-closeout-slides aria-hidden="true">
+        <img
+          class="is-active"
+          src="assets/images/burr-paw-demonstrations-1.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/burr-paw-demo-2.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+        >
+        <img
+          src="assets/images/burr-paw-image-dogs.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+        >
+      </div>
       <div class="closeout-band__inner" data-reveal>
         <p class="section__eyebrow">Ready when you are</p>
         <h2 class="section__title">Got burrs? Problem solved.</h2>

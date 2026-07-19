@@ -24,7 +24,7 @@
   var map = L.map(mapEl, {
     scrollWheelZoom: false,
     zoomControl: true,
-  }).setView([41.28, -96.16], 11);
+  }).setView([41.5, -93.5], 5);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
@@ -453,4 +453,14 @@
   window.addEventListener("resize", function () {
     map.invalidateSize();
   });
+
+  // Keep tile positioning correct after layout/scroll changes
+  if ("ResizeObserver" in window) {
+    var mapWrap = mapEl.parentElement;
+    if (mapWrap) {
+      new ResizeObserver(function () {
+        map.invalidateSize({ animate: false });
+      }).observe(mapWrap);
+    }
+  }
 })();

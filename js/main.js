@@ -251,9 +251,17 @@
 
   function initAddButtons() {
     document.querySelectorAll("[data-add-to-cart]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var qtyEl = document.querySelector("[data-qty] input");
-        var qty = qtyEl ? Number(qtyEl.value || 1) : 1;
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var qtyAttr = btn.getAttribute("data-qty");
+        var qty;
+        if (qtyAttr != null && qtyAttr !== "") {
+          qty = Number(qtyAttr) || 1;
+        } else {
+          var qtyEl = document.querySelector("[data-qty] input");
+          qty = qtyEl ? Number(qtyEl.value || 1) : 1;
+        }
         addToCart(qty);
       });
     });
@@ -388,6 +396,51 @@
     });
   }
 
+  function initCloseoutSlides() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    document.querySelectorAll("[data-closeout-slides]").forEach(function (stage) {
+      var frames = Array.prototype.slice.call(stage.querySelectorAll("img"));
+      if (frames.length < 2) return;
+
+      var index = frames.findIndex(function (img) {
+        return img.classList.contains("is-active");
+      });
+      if (index < 0) index = 0;
+
+      window.setInterval(function () {
+        index = (index + 1) % frames.length;
+        frames.forEach(function (img, i) {
+          img.classList.toggle("is-active", i === index);
+        });
+      }, 4500);
+    });
+  }
+
+  function initProductGallery() {
+    document.querySelectorAll("[data-product-gallery]").forEach(function (gallery) {
+      var main = gallery.querySelector("[data-gallery-main]");
+      var thumbs = Array.prototype.slice.call(
+        gallery.querySelectorAll("[data-gallery-thumb]")
+      );
+      if (!main || thumbs.length < 2) return;
+
+      thumbs.forEach(function (thumb) {
+        thumb.addEventListener("click", function () {
+          var src = thumb.getAttribute("data-gallery-thumb");
+          if (!src) return;
+          main.src = src;
+          thumbs.forEach(function (btn) {
+            var active = btn === thumb;
+            btn.classList.toggle("is-active", active);
+            if (active) btn.setAttribute("aria-current", "true");
+            else btn.removeAttribute("aria-current");
+          });
+        });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     updateCartUI();
     initHeader();
@@ -400,5 +453,7 @@
     initReviewCarousel();
     initLogoLoop();
     initBookFilters();
+    initCloseoutSlides();
+    initProductGallery();
   });
 })();
