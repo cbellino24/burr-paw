@@ -620,31 +620,47 @@ textarea {
 .hero-video__burr,
 .hero-video__paw {
   display: block;
-  -webkit-text-fill-color: transparent;
-  background-blend-mode: multiply, normal;
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 .hero-video__burr {
   color: #f2efe8;
-  background-color: #f2efe8;
-  background-image:
-    url("../assets/images/brand/stamp-grit.png"),
-    linear-gradient(#f2efe8, #f2efe8);
-  background-size: 140px 140px, auto;
-  background-position: 10% 20%, 0 0;
+  -webkit-text-fill-color: #f2efe8;
   transform: translateX(2%);
 }
 
 .hero-video__paw {
   color: #e65312;
-  background-color: #e65312;
-  background-image:
-    url("../assets/images/brand/stamp-grit.png"),
-    linear-gradient(#e65312, #e65312);
-  background-size: 140px 140px, auto;
-  background-position: 30% 40%, 0 0;
+  -webkit-text-fill-color: #e65312;
+}
+
+/* Stamp grit only when background-clip is supported — never wipe the solid color fallback */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-video__burr,
+  .hero-video__paw {
+    background-blend-mode: multiply, normal;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .hero-video__burr {
+    -webkit-text-fill-color: transparent;
+    background-color: #f2efe8;
+    background-image:
+      url("../assets/images/brand/stamp-grit.png"),
+      linear-gradient(#f2efe8, #f2efe8);
+    background-size: 140px 140px, auto;
+    background-position: 10% 20%, 0 0;
+  }
+
+  .hero-video__paw {
+    -webkit-text-fill-color: transparent;
+    background-color: #e65312;
+    background-image:
+      url("../assets/images/brand/stamp-grit.png"),
+      linear-gradient(#e65312, #e65312);
+    background-size: 140px 140px, auto;
+    background-position: 30% 40%, 0 0;
+  }
 }
 
 .hero-video .section__eyebrow {
