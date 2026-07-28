@@ -54,6 +54,68 @@
     document.querySelectorAll("[data-cart-count]").forEach(function (el) {
       el.textContent = String(count);
     });
+    updateShippingBanner();
+  }
+
+  function updateShippingBanner() {
+    var banners = document.querySelectorAll("[data-shipping-banner]");
+    if (!banners.length) return;
+
+    var items = getItems();
+    var subtotal = getSubtotal();
+    var threshold = FREE_SHIPPING_THRESHOLD;
+    var shopHref = resolveUrl("shop.html");
+    var cartHref = resolveUrl("cart.html");
+
+    banners.forEach(function (el) {
+      if (!items.length) {
+        el.classList.remove("has-progress");
+        el.innerHTML =
+          '<a href="' +
+          shopHref +
+          '">Free shipping on orders of $50+</a>';
+        return;
+      }
+
+      var remaining = Math.max(0, threshold - subtotal);
+      var pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+      var unlocked = remaining <= 0;
+      var label = unlocked
+        ? "You’ve unlocked free shipping"
+        : "Spend " + formatPrice(remaining) + " more for free shipping";
+      var meta = unlocked
+        ? "Free shipping applied"
+        : formatPrice(subtotal) + " / " + formatPrice(threshold);
+
+      el.classList.add("has-progress");
+      el.innerHTML =
+        '<a class="announcement__progress-link" href="' +
+        cartHref +
+        '">' +
+        '<div class="announcement__progress">' +
+        '<div class="shipping-progress' +
+        (unlocked ? " is-complete" : "") +
+        '" role="status" aria-live="polite">' +
+        '<div class="shipping-progress__copy">' +
+        '<p class="shipping-progress__label">' +
+        label +
+        "</p>" +
+        '<p class="shipping-progress__meta">' +
+        meta +
+        "</p>" +
+        "</div>" +
+        '<div class="shipping-progress__track" aria-hidden="true">' +
+        '<div class="shipping-progress__fill" style="width:' +
+        pct +
+        '%"></div>' +
+        "</div>" +
+        '<span class="sr-only">Free shipping progress: ' +
+        pct +
+        " percent</span>" +
+        "</div>" +
+        "</div>" +
+        "</a>";
+    });
   }
 
   function resolveUrl(path) {
@@ -238,6 +300,7 @@
     removeItem: removeItem,
     clearCart: clearCart,
     updateHeaderBadge: updateHeaderBadge,
+    updateShippingBanner: updateShippingBanner,
     formatPrice: formatPrice,
     resolveUrl: resolveUrl,
     useShopify: useShopify,
