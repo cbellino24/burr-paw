@@ -25,21 +25,6 @@
   window.BURR_PAW = window.BURR_PAW || {};
   window.BURR_PAW.base = basePrefix();
 
-  var cartCount = Number(localStorage.getItem("bp_cart_count") || 0);
-
-  function updateCartUI() {
-    document.querySelectorAll("[data-cart-count]").forEach(function (el) {
-      el.textContent = String(cartCount);
-    });
-  }
-
-  function addToCart(qty) {
-    cartCount += qty || 1;
-    localStorage.setItem("bp_cart_count", String(cartCount));
-    updateCartUI();
-    showToast("Added to cart (demo)");
-  }
-
   function showToast(message) {
     var toast = document.getElementById("site-toast");
     if (!toast) {
@@ -55,6 +40,21 @@
     showToast._t = setTimeout(function () {
       toast.classList.remove("is-visible");
     }, 2400);
+  }
+
+  function addToCart(qty, productId) {
+    if (!window.BURR_PAW_CART || !productId) {
+      showToast("Could not add to cart");
+      return;
+    }
+    window.BURR_PAW_CART
+      .addFromProduct(productId, qty)
+      .then(function (product) {
+        showToast(product && product.title ? "Added " + product.title + " to cart" : "Added to cart");
+      })
+      .catch(function () {
+        showToast("Could not add to cart");
+      });
   }
 
   window.BURR_PAW.addToCart = addToCart;
@@ -150,13 +150,24 @@
   }
 
   function initHeroVideo() {
+    var hero = document.querySelector(".hero-video");
     var video = document.querySelector(".hero-video video");
     var muteBtn = document.querySelector("[data-hero-mute]");
     var playBtn = document.querySelector("[data-hero-play]");
-    if (!video) return;
+    var restoreBtn = document.querySelector("[data-hero-restore]");
+    var content = document.querySelector(".hero-video__content");
+    if (!video || !hero) return;
 
     function markReady() {
       video.classList.add("is-ready");
+    }
+
+    function setWatching(on) {
+      hero.classList.toggle("is-watching", on);
+      if (restoreBtn) {
+        if (on) restoreBtn.removeAttribute("hidden");
+        else restoreBtn.setAttribute("hidden", "");
+      }
     }
 
     // Reveal once a real frame is available (avoids stale poster sitting "behind" playback)
@@ -192,6 +203,29 @@
         }
       });
     }
+
+    if (restoreBtn) {
+      restoreBtn.addEventListener("click", function () {
+        setWatching(false);
+      });
+    }
+
+    // Tap/click the hero to clear copy and watch — keep Shop CTA
+    if (content) {
+      content.addEventListener("click", function (event) {
+        var target = event.target;
+        if (target.closest("a, button, input, label")) return;
+        if (hero.classList.contains("is-watching")) return;
+        setWatching(true);
+      });
+    }
+
+    hero.addEventListener("click", function (event) {
+      var target = event.target;
+      if (target.closest(".hero-video__content, .hero-video__controls, a, button")) return;
+      if (hero.classList.contains("is-watching")) return;
+      setWatching(true);
+    });
   }
 
   function initReveals() {
@@ -254,6 +288,11 @@
       btn.addEventListener("click", function (event) {
         event.preventDefault();
         event.stopPropagation();
+        var productId = btn.getAttribute("data-product-id");
+        if (!productId) {
+          showToast("Could not add to cart");
+          return;
+        }
         var qtyAttr = btn.getAttribute("data-qty");
         var qty;
         if (qtyAttr != null && qtyAttr !== "") {
@@ -262,7 +301,7 @@
           var qtyEl = document.querySelector("[data-qty] input");
           qty = qtyEl ? Number(qtyEl.value || 1) : 1;
         }
-        addToCart(qty);
+        addToCart(qty, productId);
       });
     });
   }
@@ -441,8 +480,125 @@
     });
   }
 
+  function initNewsletterPopup() {
+    var root = document.querySelector("[data-newsletter-popup]");
+    if (!root) return;
+
+    var storageKey = "burrpaw-nl-popup";
+    var delayMs = 4500;
+    var openTimer = null;
+    var previouslyFocused = null;
+    var dialog = root.querySelector(".nl-popup__dialog");
+    var form = root.querySelector("[data-newsletter-form]");
+    var success = root.querySelector("[data-newsletter-success]");
+    var emailInput = root.querySelector("#nl-popup-email");
+
+    function wasSeen() {
+      try {
+        return window.localStorage.getItem(storageKey) === "1";
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function markSeen() {
+      try {
+        window.localStorage.setItem(storageKey, "1");
+      } catch (err) {
+        /* ignore private mode / quota */
+      }
+    }
+
+    function getFocusable() {
+      if (!dialog) return [];
+      return Array.prototype.slice.call(
+        dialog.querySelectorAll(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(function (el) {
+        return !el.hasAttribute("hidden") && el.offsetParent !== null;
+      });
+    }
+
+    function openPopup() {
+      if (root.classList.contains("is-open")) return;
+      previouslyFocused = document.activeElement;
+      root.hidden = false;
+      // Force reflow so the open transition runs
+      void root.offsetWidth;
+      root.classList.add("is-open");
+      document.body.classList.add("is-nl-popup-open");
+      window.setTimeout(function () {
+        if (emailInput && !root.classList.contains("is-success")) emailInput.focus();
+        else if (dialog) {
+          var focusable = getFocusable();
+          if (focusable[0]) focusable[0].focus();
+        }
+      }, 40);
+    }
+
+    function closePopup() {
+      if (!root.classList.contains("is-open") && root.hidden) return;
+      root.classList.remove("is-open");
+      document.body.classList.remove("is-nl-popup-open");
+      markSeen();
+      window.setTimeout(function () {
+        root.hidden = true;
+        if (previouslyFocused && typeof previouslyFocused.focus === "function") {
+          previouslyFocused.focus();
+        }
+      }, 320);
+    }
+
+    root.querySelectorAll("[data-newsletter-dismiss]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        closePopup();
+      });
+    });
+
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        root.classList.add("is-success");
+        if (success) success.hidden = false;
+        markSeen();
+        showToast("Welcome code: WELCOME10");
+        form.reset();
+        var closeBtn = root.querySelector(".nl-popup__close");
+        if (closeBtn) closeBtn.focus();
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (!root.classList.contains("is-open")) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closePopup();
+        return;
+      }
+      if (event.key !== "Tab" || !dialog) return;
+      var focusable = getFocusable();
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+
+    if (wasSeen()) return;
+
+    openTimer = window.setTimeout(function () {
+      openPopup();
+    }, delayMs);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
-    updateCartUI();
+    if (window.BURR_PAW_CART) window.BURR_PAW_CART.updateHeaderBadge();
     initHeader();
     initHeroVideo();
     initReveals();
@@ -455,5 +611,6 @@
     initBookFilters();
     initCloseoutSlides();
     initProductGallery();
+    initNewsletterPopup();
   });
 })();
