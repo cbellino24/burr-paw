@@ -16,10 +16,11 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="announcement">
-    <a href="shop.html">Free shipping on orders of $50+</a>
-  </div>
-  <header class="site-header">
+  <div class="site-top">
+    <div class="announcement" data-shipping-banner>
+      <a href="shop.html">Free shipping on orders of $50+</a>
+    </div>
+    <header class="site-header">
     <div class="header-inner">
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -56,6 +57,7 @@
       </form>
     </div>
   </header>
+  </div>
 
   <main class="cart-page" data-cart-page>
     <section class="page-hero" aria-labelledby="cart-title">
@@ -66,8 +68,6 @@
     </section>
 
     <div class="container cart-body">
-      <div class="cart-progress-wrap" data-cart-progress hidden></div>
-
       <div class="cart-layout">
         <div class="cart-layout__items" data-cart-items hidden></div>
         <aside class="cart-layout__summary" data-cart-summary hidden></aside>
