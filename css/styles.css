@@ -693,6 +693,7 @@ textarea {
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .hero-video__burr,
   .hero-video__paw {
+    /* Color layer first so unsupported blend-mode still shows orange/cream, not white grit */
     background-blend-mode: multiply, normal;
     -webkit-background-clip: text;
     background-clip: text;
@@ -702,20 +703,20 @@ textarea {
     -webkit-text-fill-color: transparent;
     background-color: #f2efe8;
     background-image:
-      url("../assets/images/brand/stamp-grit.png"),
-      linear-gradient(#f2efe8, #f2efe8);
-    background-size: 140px 140px, auto;
-    background-position: 10% 20%, 0 0;
+      linear-gradient(#f2efe8, #f2efe8),
+      url("../assets/images/brand/stamp-grit.png");
+    background-size: auto, 140px 140px;
+    background-position: 0 0, 10% 20%;
   }
 
   .hero-video__paw {
     -webkit-text-fill-color: transparent;
     background-color: #e65312;
     background-image:
-      url("../assets/images/brand/stamp-grit.png"),
-      linear-gradient(#e65312, #e65312);
-    background-size: 140px 140px, auto;
-    background-position: 30% 40%, 0 0;
+      linear-gradient(#e65312, #e65312),
+      url("../assets/images/brand/stamp-grit.png");
+    background-size: auto, 140px 140px;
+    background-position: 0 0, 30% 40%;
   }
 }
 
