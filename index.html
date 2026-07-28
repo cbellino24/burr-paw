@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/images/brand/logo-mark.png" type="image/png">
+  <link rel="icon" href="assets/images/brand/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/brand/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
@@ -24,7 +26,7 @@
         <span></span><span></span><span></span>
       </button>
       <a class="brand" href="index.html" aria-label="Burr Paw home">
-        <img class="brand__mark brand__mark--on-dark" src="assets/images/brand/logo-mark.png" alt="" width="88" height="88"><img class="brand__mark brand__mark--on-light" src="assets/images/brand/logo-mark-light.png" alt="" width="88" height="88">
+        <img class="brand__mark brand__mark--on-dark" src="assets/images/brand/burr-paw-white-logo.png" alt="" width="96" height="88"><img class="brand__mark brand__mark--on-light" src="assets/images/brand/burr-paw-black-logo.png" alt="" width="96" height="88">
         <span class="brand__name">Burr Paw</span>
       </a>
       <nav class="primary-nav" aria-label="Primary">
@@ -41,7 +43,7 @@
         <button class="icon-btn" type="button" aria-label="Search" data-search-toggle>
           <img src="assets/images/icon-search.svg" alt="" width="20" height="20">
         </button>
-        <a class="icon-btn cart-icon" href="shop.html" aria-label="Cart">
+        <a class="icon-btn cart-icon" href="cart.html" aria-label="Cart">
           <img src="assets/images/icon-cart.svg" alt="" width="20" height="20">
           <span class="cart-count" data-cart-count>0</span>
         </a>
@@ -60,59 +62,83 @@
     <section class="hero-video" aria-label="Burr Paw promo">
       <div class="hero-video__media">
         <video class="hero-video__el" autoplay muted loop playsinline preload="auto" poster="assets/images/brand/hero-fallback.jpg">
-          <source src="assets/video/promo-video.mp4" type="video/mp4">
+          <source src="assets/video/burr-paw-video-promo-no-logo.mp4" type="video/mp4">
         </video>
       </div>
       <div class="hero-video__veil" aria-hidden="true"></div>
       <div class="hero-video__grain" aria-hidden="true"></div>
       <div class="hero-video__content hero-video__content--center">
-        <p class="section__eyebrow">For anyone who works or plays in the rough</p>
-        <h1 class="hero-video__brand"><span class="hero-video__burr">Burr</span><span class="hero-video__paw">Paw</span></h1>
-        <p class="hero-video__lead">Got burrs? Problem solved. Sweep stubborn stickers off clothing, gear, and pets without wrecking your fingers.</p>
+        <div class="hero-video__copy" data-hero-copy>
+          <p class="section__eyebrow">For anyone who works or plays in the rough</p>
+          <h1 class="hero-video__brand"><span class="hero-video__burr">Burr</span><span class="hero-video__paw">Paw</span></h1>
+          <p class="hero-video__lead">Got Burrs? Problem solved.</p>
+          <p class="hero-video__watch-hint">Tap anywhere to watch the video</p>
+        </div>
         <div class="hero-video__actions">
-          <a class="btn btn--blaze" href="shop.html">Shop Burr Paw</a>
-          <a class="btn btn--ghost" href="where-to-buy.html">Find a Store</a>
+          <a class="btn btn--ghost" href="shop.html">Shop Burr Paw</a>
         </div>
       </div>
       <div class="hero-video__controls">
         <button class="hero-chip" type="button" data-hero-mute>Unmute</button>
         <button class="hero-chip" type="button" data-hero-play>Pause</button>
+        <button class="hero-chip hero-chip--restore" type="button" data-hero-restore hidden>Show text</button>
       </div>
       <div class="hero-scroll" aria-hidden="true">Scroll</div>
     </section>
 
-    <section class="marquee" aria-label="Brand message">
+    <section class="marquee" aria-label="Promotions">
       <div class="marquee__track">
         <div class="marquee__group">
-          <p>Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
-          <p aria-hidden="true">Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
-          <p aria-hidden="true">Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
-          <p aria-hidden="true">Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
+          <p>Free shipping on orders $50+</p>
+          <p>Try the Burr Paw risk free with our 30 day money back guarantee</p>
+          <p aria-hidden="true">Free shipping on orders $50+</p>
+          <p aria-hidden="true">Try the Burr Paw risk free with our 30 day money back guarantee</p>
         </div>
         <div class="marquee__group" aria-hidden="true">
-          <p>Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
-          <p>Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
-          <p>Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
-          <p>Welcome to Burr Paw. Clear the stickers. Keep the adventure, made for anyone who works or plays in the rough.</p>
+          <p>Free shipping on orders $50+</p>
+          <p>Try the Burr Paw risk free with our 30 day money back guarantee</p>
+          <p>Free shipping on orders $50+</p>
+          <p>Try the Burr Paw risk free with our 30 day money back guarantee</p>
         </div>
       </div>
     </section>
 
     <section class="section section--white">
       <div class="container pitch" data-reveal>
-        <div class="pitch__visual">
-          <img src="assets/images/burr-paw-white-background-black.jpg" alt="Burr Paw sticker remover in black" width="900" height="900">
-        </div>
-        <div class="pitch__copy">
-          <p class="section__eyebrow">The mitt that ends the mess</p>
-          <h2 class="section__title">Easily remove stubborn stickers and burrs.</h2>
-          <p class="section__lead">Wear it like a mitt or fold it for a quick job. Burrs stick to the Burr Paw — not your hands, fleece, or your dog’s pads.</p>
-          <p class="guarantee">
-            <span class="guarantee__label">30-day guarantee</span>
-            <span class="guarantee__text">Risk-free trial. If it’s not the mitt you need, return it.</span>
-          </p>
-          <div style="margin-top:1.5rem">
-            <a class="btn btn--dark" href="use-and-care.html">How it works</a>
+        <h2 class="pitch__got">Got Burrs?</h2>
+        <div class="pitch__body">
+          <div class="pitch__visual" data-closeout-slides>
+            <img
+              class="is-active pitch__slide--zoom-out"
+              src="assets/images/burr-paw-demonstrations-1.jpg"
+              alt="Burr Paw on a pant leg in the field"
+              width="900"
+              height="900"
+            >
+            <img
+              src="assets/images/burr-paw-demo-2.jpg"
+              alt="Using Burr Paw to clear stickers from clothing"
+              width="900"
+              height="900"
+            >
+            <img
+              class="pitch__slide--retriever"
+              src="assets/images/Burr-paw-golden-retriever.jpg"
+              alt="Golden retriever outdoors with Burr Paw"
+              width="1132"
+              height="637"
+              loading="lazy"
+            >
+          </div>
+          <div class="pitch__copy">
+            <h3 class="section__title">Easily remove stubborn stickers and burrs.</h3>
+            <p class="guarantee">
+              <span class="guarantee__text">Try the Burr Paw risk free with our 30 day money back guarantee.</span>
+            </p>
+            <div class="pitch__cta">
+              <a class="btn btn--blaze" href="shop.html">Buy Now</a>
+              <a class="btn btn--dark" href="use-and-care.html">How it works</a>
+            </div>
           </div>
         </div>
       </div>
@@ -122,8 +148,8 @@
       <div class="demo__inner">
         <div class="demo__copy" data-reveal>
           <p class="section__eyebrow">See it work</p>
-          <h2 class="demo__title" id="demo-title">Burr Paw Demonstration</h2>
-          <p class="demo__lead">Watch a quick walkthrough — wear it, sweep it, clean it. Same mitt. Less mess.</p>
+          <h2 class="demo__title" id="demo-title">Watch Our Original 2012 Demo Video That Made It All Happen Here</h2>
+          <p class="demo__lead">A quick demo of the Burr Paw in action.</p>
           <a class="text-link text-link--on-dark" href="use-and-care.html">Read use &amp; care <span aria-hidden="true">→</span></a>
         </div>
         <div class="demo__stage" data-reveal>
@@ -132,7 +158,7 @@
             type="button"
             data-demo-video
             data-youtube-id="-3ZMGbV_pyQ"
-            aria-label="Play Burr Paw demonstration video"
+            aria-label="Play original 2012 Burr Paw demo video"
           >
             <img
               class="demo__poster"
@@ -159,158 +185,43 @@
             <p class="section__eyebrow">Shop</p>
             <h2 class="section__title">Choose your Burr Paw.</h2>
           </div>
-          <p class="section__lead">Three colorways. One job: clean gear, clothing, and pets faster.</p>
         </div>
         <div class="swatch-grid" data-reveal>
           <article class="swatch">
             <a class="swatch__link" href="products/burr-paw.html">
               <div class="swatch__media swatch__media--fill">
-                <span class="swatch__badge">Sale</span>
                 <img src="assets/images/burr-paw-black-2.jpg" alt="Burr Paw Black">
               </div>
               <div class="swatch__meta">
                 <h3 class="swatch__name">Black</h3>
-                <p class="swatch__price"><span class="swatch__price-sale">$21.95</span> <s class="swatch__price-compare">$31.95</s></p>
+                <p class="swatch__price"><s class="swatch__price-compare">$31.95</s> <span class="swatch__price-sale">$29.95</span></p>
               </div>
             </a>
-            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1">Quick add</button>
+            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1" data-product-id="burr-paw-black">Quick add</button>
           </article>
           <article class="swatch">
             <a class="swatch__link" href="products/burr-paw-tan-new-product.html">
               <div class="swatch__media swatch__media--fill">
-                <span class="swatch__badge">Sale</span>
-                <img src="assets/images/burr-paw-tan.jpg" alt="Burr Paw Tan">
+                <img src="assets/images/burr-paw-tan-2.jpg" alt="Burr Paw Tan">
               </div>
               <div class="swatch__meta">
                 <h3 class="swatch__name">Tan</h3>
-                <p class="swatch__price"><span class="swatch__price-sale">$21.95</span> <s class="swatch__price-compare">$31.95</s></p>
+                <p class="swatch__price"><s class="swatch__price-compare">$31.95</s> <span class="swatch__price-sale">$29.95</span></p>
               </div>
             </a>
-            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1">Quick add</button>
+            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1" data-product-id="burr-paw-tan">Quick add</button>
           </article>
           <article class="swatch">
             <a class="swatch__link" href="products/burr-paw-orange.html">
               <div class="swatch__media swatch__media--fill">
-                <span class="swatch__badge">Sale</span>
-                <img src="assets/images/burr-pa-orange.jpg" alt="Burr Paw Orange">
+                <img class="swatch__img--zoom-in" src="assets/images/burr-pa-orange.jpg" alt="Burr Paw Orange">
               </div>
               <div class="swatch__meta">
                 <h3 class="swatch__name">Orange</h3>
-                <p class="swatch__price"><span class="swatch__price-sale">$21.95</span> <s class="swatch__price-compare">$31.95</s></p>
+                <p class="swatch__price"><s class="swatch__price-compare">$31.95</s> <span class="swatch__price-sale">$29.95</span></p>
               </div>
             </a>
-            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1">Quick add</button>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="logo-band" id="custom-logo" aria-labelledby="custom-logo-title">
-      <div class="logo-cta" data-reveal>
-        <div class="logo-cta__copy">
-          <p class="section__eyebrow">Promotional &amp; team orders</p>
-          <h2 class="logo-cta__title" id="custom-logo-title">Put your logo on the Burr Paw.</h2>
-          <p class="logo-cta__note">Perfect for retailers, clubs, outfitters, and brands. Custom logoing is quote-only. Tell us your quantity and we’ll send pricing.</p>
-          <ul class="logo-cta__points">
-            <li>Quote-only — not sold through cart</li>
-            <li>Ideal for dealerships, shops, and outdoor brands</li>
-            <li>We’ll confirm artwork and placement with you</li>
-          </ul>
-          <a class="btn btn--ghost" href="custom-logo.html">Request a Quote</a>
-        </div>
-        <div class="logo-cta__visual">
-          <div class="logo-cta__stage" data-logo-loop>
-            <img
-              class="is-active"
-              src="assets/images/Products/burr-paw-black-1.jpg"
-              alt="Burr Paw black without custom logo"
-              width="900"
-              height="1100"
-              data-caption="Without logo"
-            >
-            <img
-              src="assets/images/Products/burr-paw-custom-black-1.jpg"
-              alt="Burr Paw black with custom logo"
-              width="900"
-              height="1100"
-              data-caption="With your logo"
-            >
-            <img
-              src="assets/images/Products/burr-paw-tan-no-logo.jpg"
-              alt="Burr Paw tan without custom logo"
-              width="900"
-              height="1100"
-              data-caption="Without logo"
-            >
-            <img
-              src="assets/images/Products/burr-paw-tan-logo-1.jpg"
-              alt="Burr Paw tan with custom logo"
-              width="900"
-              height="1100"
-              data-caption="With your logo"
-            >
-            <img
-              src="assets/images/Products/ORANGE-BURR-paw-no-logo.jpg"
-              alt="Burr Paw orange without custom logo"
-              width="900"
-              height="1100"
-              data-caption="Without logo"
-            >
-            <img
-              src="assets/images/Products/ORANGE-BURR-PAW-with-logo.jpg"
-              alt="Burr Paw orange with custom logo"
-              width="900"
-              height="1100"
-              data-caption="With your logo"
-            >
-          </div>
-          <p class="logo-cta__caption" data-logo-caption>Without logo</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="loves">
-      <div class="container">
-        <div class="section-head section-head--split" data-reveal>
-          <div>
-            <p class="section__eyebrow">Also worth packing</p>
-            <h2 class="section__title">Other products Burr Paw loves</h2>
-          </div>
-          <p class="section__lead">Hunting stories by Stephanie White — an outdoor companion shelf that still keeps Burr Paw front and center.</p>
-        </div>
-        <div class="loves-grid" data-reveal>
-          <article class="love-item">
-            <div class="love-item__media"><img src="assets/images/Products/Books/book-off-the-roost.jpg" alt="Off The Roost by Stephanie White"></div>
-            <div>
-              <h3 class="love-item__title">Off The Roost</h3>
-              <p class="love-item__meta">Stephanie White · Illustrated hunting story</p>
-            </div>
-            <div class="love-item__row">
-              <span class="price">$24.95</span>
-              <button class="btn btn--dark" type="button" data-add-to-cart>Add to Cart</button>
-            </div>
-          </article>
-          <article class="love-item">
-            <div class="love-item__media"><img src="assets/images/Products/Books/book-the-hunt.jpg" alt="The Hunt by Stephanie White"></div>
-            <div>
-              <h3 class="love-item__title">The Hunt</h3>
-              <p class="love-item__meta">Stephanie White · Illustrated hunting story</p>
-            </div>
-            <div class="love-item__row">
-              <span class="price">$24.95</span>
-              <button class="btn btn--dark" type="button" data-add-to-cart>Add to Cart</button>
-            </div>
-          </article>
-          <article class="love-item">
-            <div class="love-item__media"><img src="assets/images/Products/Books/book-the-flight.jpg" alt="The Flight by Stephanie White"></div>
-            <div>
-              <h3 class="love-item__title">The Flight</h3>
-              <p class="love-item__meta">Stephanie White · Illustrated hunting story</p>
-            </div>
-            <div class="love-item__row">
-              <span class="price">$24.95</span>
-              <button class="btn btn--dark" type="button" data-add-to-cart>Add to Cart</button>
-            </div>
+            <button class="swatch__quick-add" type="button" data-add-to-cart data-qty="1" data-product-id="burr-paw-orange">Quick add</button>
           </article>
         </div>
       </div>
@@ -381,6 +292,70 @@
       </div>
     </section>
 
+    <section class="logo-band" id="custom-logo" aria-labelledby="custom-logo-title">
+      <div class="logo-cta" data-reveal>
+        <div class="logo-cta__copy">
+          <p class="section__eyebrow">Partner With The Paw</p>
+          <h2 class="logo-cta__title" id="custom-logo-title">Put your logo on the Burr Paw.</h2>
+          <p class="logo-cta__note">Everybody loves a useful promotional item.</p>
+          <ul class="logo-cta__points">
+            <li>Perfect for retailers, outfitters, and brand awareness.</li>
+            <li>Custom logoing is quote-only.</li>
+            <li>Send us your quantity and your logo and we will send pricing.</li>
+          </ul>
+          <a class="btn btn--dark" href="custom-logo.html">Request a Quote</a>
+        </div>
+        <div class="logo-cta__visual">
+          <div class="logo-cta__stage" data-logo-loop>
+            <img
+              class="is-active"
+              src="assets/images/Products/burr-paw-black-1.jpg"
+              alt="Burr Paw black without custom logo"
+              width="900"
+              height="1100"
+              data-caption="Without logo"
+            >
+            <img
+              src="assets/images/Products/burr-paw-custom-black-1.jpg"
+              alt="Burr Paw black with custom logo"
+              width="900"
+              height="1100"
+              data-caption="With your logo"
+            >
+            <img
+              src="assets/images/Products/burr-paw-tan-no-logo.jpg"
+              alt="Burr Paw tan without custom logo"
+              width="900"
+              height="1100"
+              data-caption="Without logo"
+            >
+            <img
+              src="assets/images/Products/burr-paw-tan-logo-1.jpg"
+              alt="Burr Paw tan with custom logo"
+              width="900"
+              height="1100"
+              data-caption="With your logo"
+            >
+            <img
+              src="assets/images/Products/ORANGE-BURR-paw-no-logo.jpg"
+              alt="Burr Paw orange without custom logo"
+              width="900"
+              height="1100"
+              data-caption="Without logo"
+            >
+            <img
+              src="assets/images/Products/ORANGE-BURR-PAW-with-logo.jpg"
+              alt="Burr Paw orange with custom logo"
+              width="900"
+              height="1100"
+              data-caption="With your logo"
+            >
+          </div>
+          <p class="logo-cta__caption" data-logo-caption>Without logo</p>
+        </div>
+      </div>
+    </section>
+
     <section class="social-feed" aria-labelledby="social-feed-title">
       <div class="container social-feed__intro" data-reveal>
         <p class="social-feed__hash">#BurrPaw</p>
@@ -395,52 +370,15 @@
           <img src="assets/images/Burr-paw-ig-1.jpg" alt="Dogs after a day in the rough" width="600" height="600" loading="lazy">
         </a>
         <a class="social-feed__tile" href="https://www.instagram.com/explore/tags/burrpaw/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/burr-paw-ig-3.jpg" alt="Burr Paw black colorway" width="600" height="600" loading="lazy">
+          <img src="assets/images/burr-paw-ig-3.jpg" alt="Burr Paw black" width="600" height="600" loading="lazy">
         </a>
       </div>
       <div class="container social-feed__foot" data-reveal>
-        <p class="social-feed__tagline">Out in the rough. Back in the clear.</p>
         <ul class="social-feed__links">
           <li><a href="https://www.instagram.com/explore/tags/burrpaw/" target="_blank" rel="noopener noreferrer">Follow us on Instagram</a></li>
           <li><a href="https://www.facebook.com/search/top?q=Burr%20Paw" target="_blank" rel="noopener noreferrer">Follow us on Facebook</a></li>
           <li><a href="https://www.youtube.com/results?search_query=Burr+Paw" target="_blank" rel="noopener noreferrer">Follow us on YouTube</a></li>
         </ul>
-      </div>
-    </section>
-
-    <section class="section closeout-band" aria-label="Call to action">
-      <div class="closeout-band__slides" data-closeout-slides aria-hidden="true">
-        <img
-          class="is-active"
-          src="assets/images/burr-paw-demonstrations-1.jpg"
-          alt=""
-          width="1600"
-          height="900"
-          loading="lazy"
-        >
-        <img
-          src="assets/images/burr-paw-demo-2.jpg"
-          alt=""
-          width="1600"
-          height="900"
-          loading="lazy"
-        >
-        <img
-          src="assets/images/burr-paw-image-dogs.jpg"
-          alt=""
-          width="1600"
-          height="900"
-          loading="lazy"
-          class="closeout-band__slide--dogs"
-        >
-      </div>
-      <div class="closeout-band__inner" data-reveal>
-        <p class="section__eyebrow">Ready when you are</p>
-        <h2 class="section__title">Got burrs? Problem solved.</h2>
-        <div class="closeout-band__actions">
-          <a class="btn btn--blaze" href="shop.html">Buy Now</a>
-          <a class="btn btn--ghost" href="contact.html">Get in Touch</a>
-        </div>
       </div>
     </section>
   </main>
@@ -449,7 +387,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a class="brand" href="index.html">
-          <img class="brand__mark brand__mark--on-dark" src="assets/images/brand/logo-mark.png" alt="" width="88" height="88"><img class="brand__mark brand__mark--on-light" src="assets/images/brand/logo-mark-light.png" alt="" width="88" height="88">
+          <img class="brand__mark brand__mark--on-dark" src="assets/images/brand/burr-paw-white-logo.png" alt="" width="96" height="88"><img class="brand__mark brand__mark--on-light" src="assets/images/brand/burr-paw-black-logo.png" alt="" width="96" height="88">
           <span class="brand__name">Burr Paw</span>
         </a>
         <p class="footer-tagline">A mitten designed for fast and effective removal of stubborn stickers and burrs from clothing, gear, and pets.</p>
@@ -497,6 +435,67 @@
       <p>&copy; 2026 Burr Paw. U.S. Pat. No. 8,661,601.</p>
     </div>
   </footer>
+
+  <div class="nl-popup" id="newsletter-popup" hidden data-newsletter-popup>
+    <div class="nl-popup__backdrop" data-newsletter-dismiss tabindex="-1"></div>
+    <div
+      class="nl-popup__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="nl-popup-title"
+      aria-describedby="nl-popup-desc"
+    >
+      <button class="nl-popup__close" type="button" aria-label="Close newsletter offer" data-newsletter-dismiss>&times;</button>
+      <div class="nl-popup__media" aria-hidden="true" data-closeout-slides>
+        <img
+          class="is-active pitch__slide--zoom-out"
+          src="assets/images/burr-paw-demonstrations-1.jpg"
+          alt=""
+          width="900"
+          height="900"
+        >
+        <img
+          src="assets/images/burr-paw-demo-2.jpg"
+          alt=""
+          width="900"
+          height="900"
+        >
+        <img
+          class="pitch__slide--retriever"
+          src="assets/images/Burr-paw-golden-retriever.jpg"
+          alt=""
+          width="1132"
+          height="637"
+        >
+      </div>
+      <div class="nl-popup__body">
+        <p class="nl-popup__brand">Burr Paw</p>
+        <p class="nl-popup__offer">10% off</p>
+        <h2 class="nl-popup__title" id="nl-popup-title">Your first order</h2>
+        <p class="nl-popup__desc" id="nl-popup-desc">Sign up for field notes and get 10% off your first Burr Paw.</p>
+        <form class="nl-popup__form" data-newsletter-form>
+          <label class="sr-only" for="nl-popup-email">Email address</label>
+          <input
+            class="nl-popup__input"
+            id="nl-popup-email"
+            type="email"
+            name="email"
+            placeholder="Email address"
+            required
+            autocomplete="email"
+          >
+          <button class="btn btn--blaze nl-popup__submit" type="submit">Get my code</button>
+        </form>
+        <div class="nl-popup__success" data-newsletter-success hidden role="status">
+          You’re in — use code <strong>WELCOME10</strong> at checkout.
+        </div>
+        <button class="nl-popup__skip" type="button" data-newsletter-dismiss>No thanks</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
   <script src="js/main.js" defer></script>
 
 </body>
