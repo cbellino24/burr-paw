@@ -9,16 +9,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700" rel="stylesheet">
-  <link rel="icon" href="../assets/images/brand/favicon.ico" sizes="any">
-  <link rel="icon" href="../assets/images/brand/favicon.png" type="image/png">
+  <link rel="icon" href="../assets/images/brand/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="../assets/images/brand/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-  <div class="announcement">
-    <a href="../shop.html">Free shipping on orders of $50+</a>
-  </div>
-  <header class="site-header">
+  <div class="site-top">
+    <div class="announcement" data-shipping-banner>
+      <a href="../shop.html">Free shipping on orders of $50+</a>
+    </div>
+    <header class="site-header">
     <div class="header-inner">
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -55,6 +56,7 @@
       </form>
     </div>
   </header>
+  </div>
 
   <main>
     <section class="policy-hero" aria-labelledby="policy-title">
@@ -144,7 +146,17 @@
       </div>
     </div>
     <div class="footer-bar">
-      <p>&copy; 2026 Burr Paw. U.S. Pat. No. 8,661,601.</p>
+      <div class="footer-bar__inner">
+        <ul class="footer-payment-list" aria-label="Accepted payment methods">
+          <li class="footer-payment-list__item"><img src="../assets/images/payments/visa.svg" alt="Visa" width="66" height="44" loading="lazy"></li>
+          <li class="footer-payment-list__item"><img src="../assets/images/payments/mastercard.svg" alt="Mastercard" width="66" height="44" loading="lazy"></li>
+          <li class="footer-payment-list__item"><img src="../assets/images/payments/amex.svg" alt="American Express" width="66" height="44" loading="lazy"></li>
+          <li class="footer-payment-list__item"><img src="../assets/images/payments/discover.svg" alt="Discover" width="66" height="44" loading="lazy"></li>
+          <li class="footer-payment-list__item"><img src="../assets/images/payments/apple-pay.svg" alt="Apple Pay" width="66" height="44" loading="lazy"></li>
+          <li class="footer-payment-list__item"><img src="../assets/images/payments/paypal.svg" alt="PayPal" width="66" height="44" loading="lazy"></li>
+        </ul>
+        <p>&copy; 2026 Burr Paw. U.S. Pat. No. 8,661,601.</p>
+      </div>
     </div>
   </footer>
   <script src="../js/products.js" defer></script>
