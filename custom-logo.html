@@ -70,75 +70,6 @@
       </div>
     </section>
 
-    <section class="section section--stone logo-page-quote" aria-labelledby="quote-title" id="quote">
-      <div class="container">
-        <div class="logo-page-quote__head" data-reveal>
-          <p class="section__eyebrow">Request a quote</p>
-          <h2 class="section__title" id="quote-title">Tell us what you need</h2>
-          <p class="section__lead">Share quantity and details. We’ll reply with pricing for retailer giveaways, team kits, and branded outdoor gear.</p>
-        </div>
-
-        <div class="logo-page-quote__body" data-reveal>
-          <form class="form form--quote" data-demo-form>
-            <div class="form-row">
-              <div class="field">
-                <label for="company">Business / Organization</label>
-                <input id="company" name="company" required>
-              </div>
-              <div class="field">
-                <label for="contact-name">Contact name</label>
-                <input id="contact-name" name="contact_name" required autocomplete="name">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="q-email">Email</label>
-                <input id="q-email" name="email" type="email" required autocomplete="email">
-              </div>
-              <div class="field">
-                <label for="q-phone">Phone</label>
-                <input id="q-phone" name="phone" type="tel" autocomplete="tel">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="qty">Quantity</label>
-                <input id="qty" name="quantity" type="number" min="50" placeholder="50" required>
-                <p class="field__hint">Custom logoing requires a minimum quantity of 50 units.</p>
-              </div>
-              <div class="field">
-                <label for="color">Preferred color</label>
-                <select id="color" name="color">
-                  <option>Black</option>
-                  <option>Tan</option>
-                  <option>Orange</option>
-                  <option>Mix / not sure</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label for="logo-notes">Logo &amp; placement notes</label>
-              <textarea id="logo-notes" name="notes" rows="3" placeholder="Logo description, placement, deadline, or event." required></textarea>
-            </div>
-            <div class="field">
-              <label for="logo-file">Logo file <span class="field__optional">(optional)</span></label>
-              <input id="logo-file" name="logo" type="file" accept=".png,.jpg,.jpeg,.svg,.pdf">
-            </div>
-            <p class="form-note">Demo form only. On Shopify, submissions email Lindsey@Burrpaw.com.</p>
-            <button class="btn btn--dark" type="submit">Request quote</button>
-            <div class="form-success" role="status">Quote request captured for this demo. We'll wire this to email/CRM on the Shopify build.</div>
-          </form>
-
-          <aside class="logo-page-quote__aside">
-            <p class="logo-page-quote__aside-label">Prefer email or phone?</p>
-            <a href="mailto:Lindsey@Burrpaw.com">Lindsey@Burrpaw.com</a>
-            <a href="tel:+14023708050">1 (402) 370-8050</a>
-            <p class="logo-page-quote__aside-note">Custom logoing is only available for orders of 50 units or more.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
     <section class="logo-band logo-page-preview" aria-labelledby="preview-title">
       <div class="logo-cta" data-reveal>
         <div class="logo-cta__copy">
@@ -194,6 +125,85 @@
           </div>
           <p class="logo-cta__caption" data-logo-caption>Without logo</p>
         </div>
+      </div>
+    </section>
+
+    <section class="contact-compose logo-page-quote" aria-labelledby="quote-title" id="quote">
+      <div class="container contact-compose__grid">
+        <form class="form form--on-dark" data-demo-form data-reveal>
+          <div class="contact-compose__form-head">
+            <p class="section__eyebrow">Request a quote</p>
+            <h2 class="contact-compose__title" id="quote-title">Tell us what you need</h2>
+            <p class="logo-page-quote__lead">Share quantity and details. We’ll reply with pricing for retailer giveaways, team kits, and branded outdoor gear.</p>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="company">Business / Organization</label>
+              <input id="company" name="company" required>
+            </div>
+            <div class="field">
+              <label for="contact-name">Contact name</label>
+              <input id="contact-name" name="contact_name" required autocomplete="name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="q-email">Email</label>
+              <input id="q-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="q-phone">Phone</label>
+              <input id="q-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="qty">Quantity</label>
+              <input id="qty" name="quantity" type="number" min="50" placeholder="50" required>
+              <p class="field__hint">Custom logoing requires a minimum quantity of 50 units.</p>
+            </div>
+            <div class="field">
+              <label for="color">Preferred color</label>
+              <select id="color" name="color">
+                <option>Black</option>
+                <option>Tan</option>
+                <option>Orange</option>
+                <option>Mix / not sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="logo-notes">Logo &amp; placement notes</label>
+            <textarea id="logo-notes" name="notes" rows="3" placeholder="Logo description, placement, deadline, or event." required></textarea>
+          </div>
+          <div class="field">
+            <label for="logo-file">Logo file <span class="field__optional">(optional)</span></label>
+            <input id="logo-file" name="logo" type="file" accept=".png,.jpg,.jpeg,.svg,.pdf">
+          </div>
+          <p class="form-note form-note--on-dark">Demo form only. On Shopify, submissions email Lindsey@Burrpaw.com.</p>
+          <button class="btn btn--ghost" type="submit">Request quote</button>
+          <div class="form-success form-success--on-dark" role="status">Quote request captured for this demo. We'll wire this to email/CRM on the Shopify build.</div>
+        </form>
+
+        <aside class="contact-aside" data-reveal>
+          <p class="contact-aside__eyebrow">Prefer email or phone?</p>
+          <h2 class="contact-aside__title">Reach the team</h2>
+          <ul class="contact-aside__links">
+            <li>
+              <a href="mailto:Lindsey@Burrpaw.com">
+                <span>Lindsey@Burrpaw.com</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+14023708050">
+                <span>1 (402) 370-8050</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+          <p class="contact-aside__note">Custom logoing is only available for orders of 50 units or more.</p>
+        </aside>
       </div>
     </section>
 
