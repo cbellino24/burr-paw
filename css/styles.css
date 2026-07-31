@@ -3865,15 +3865,18 @@ body.is-nav-open .site-top {
   letter-spacing: 0.16em;
 }
 
-.care-audience__head {
+.care-audience__layout {
   display: grid;
-  gap: 0;
-  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  grid-template-columns: 1.2fr 1fr;
+  column-gap: clamp(1.25rem, 3vw, 2.5rem);
+  row-gap: clamp(1.25rem, 2.5vw, 2rem);
   align-items: end;
 }
 
-.care-audience__head.section-head--split {
-  gap: clamp(1.25rem, 3vw, 2.5rem);
+.care-audience__head {
+  display: grid;
+  gap: 0;
+  align-content: end;
 }
 
 .care-audience__head .section__title {
@@ -3885,11 +3888,12 @@ body.is-nav-open .site-top {
   margin-bottom: 0;
 }
 
-.care-audience__head .section__lead {
+.care-audience__lead {
   margin: 0;
   max-width: 28rem;
   font-size: 1.125rem;
   line-height: 1.55;
+  justify-self: start;
 }
 
 .care-audience__list {
@@ -3900,6 +3904,7 @@ body.is-nav-open .site-top {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   border-top: 1px solid var(--line);
+  grid-column: 1 / -1;
 }
 
 /* Keep the grid/lines fixed — only stagger the words */
@@ -4931,9 +4936,7 @@ body.is-nav-open .site-top {
   justify-content: center;
   gap: 0.35rem;
   padding: 2.35rem 2.1rem 1.75rem;
-  background:
-    radial-gradient(ellipse 90% 70% at 100% 0%, rgba(228, 87, 18, 0.1), transparent 55%),
-    linear-gradient(180deg, #faf8f4 0%, #f3f0e9 100%);
+  background: #fff;
 }
 
 .nl-popup__brand {
@@ -6651,6 +6654,24 @@ body.is-nl-popup-open {
   .contact-faq__inner,
   .policy-body__layout {
     grid-template-columns: 1fr;
+  }
+
+  .care-audience__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .care-audience__head {
+    order: 1;
+  }
+
+  .care-audience__list {
+    order: 2;
+    grid-column: auto;
+  }
+
+  .care-audience__lead {
+    order: 3;
+    max-width: none;
   }
 
   .policy-aside {

@@ -489,16 +489,15 @@
     var root = document.querySelector("[data-newsletter-popup]");
     if (!root) return;
 
-    var storageKey = "burrpaw-nl-popup";
+    var storageKey = "burrpaw-nl-subscribed";
     var delayMs = 4500;
-    var openTimer = null;
     var previouslyFocused = null;
     var dialog = root.querySelector(".nl-popup__dialog");
     var form = root.querySelector("[data-newsletter-form]");
     var success = root.querySelector("[data-newsletter-success]");
     var emailInput = root.querySelector("#nl-popup-email");
 
-    function wasSeen() {
+    function hasSubscribed() {
       try {
         return window.localStorage.getItem(storageKey) === "1";
       } catch (err) {
@@ -506,7 +505,7 @@
       }
     }
 
-    function markSeen() {
+    function markSubscribed() {
       try {
         window.localStorage.setItem(storageKey, "1");
       } catch (err) {
@@ -546,7 +545,6 @@
       if (!root.classList.contains("is-open") && root.hidden) return;
       root.classList.remove("is-open");
       document.body.classList.remove("is-nl-popup-open");
-      markSeen();
       window.setTimeout(function () {
         root.hidden = true;
         if (previouslyFocused && typeof previouslyFocused.focus === "function") {
@@ -566,7 +564,7 @@
         event.preventDefault();
         root.classList.add("is-success");
         if (success) success.hidden = false;
-        markSeen();
+        markSubscribed();
         showToast("Welcome code: WELCOME10");
         form.reset();
         var closeBtn = root.querySelector(".nl-popup__close");
@@ -595,9 +593,10 @@
       }
     });
 
-    if (wasSeen()) return;
+    // Only skip after they’ve submitted an email; dismiss still reopens next visit
+    if (hasSubscribed()) return;
 
-    openTimer = window.setTimeout(function () {
+    window.setTimeout(function () {
       openPopup();
     }, delayMs);
   }
