@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>Terms of Service — Burr Paw</title>
-  <meta name="description" content="Burr Paw terms of service.">
+  <title>A Farm Christmas Morning — Burr Paw</title>
+  <meta name="description" content="A Farm Christmas Morning by Stephanie White — a children’s farm Christmas book available from Burr Paw.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700" rel="stylesheet">
@@ -31,7 +31,7 @@
       <nav class="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="../shop.html">Shop</a></li>
+          <li><a href="../shop.html" aria-current="page">Shop</a></li>
           <li><a href="../use-and-care.html">Use &amp; Care</a></li>
           <li><a href="../where-to-buy.html">Where to Buy</a></li>
           <li><a href="../custom-logo.html">Custom Logo</a></li>
@@ -59,38 +59,119 @@
   </div>
 
   <main>
-    <section class="policy-hero" aria-labelledby="policy-title">
-      <div class="container policy-hero__inner">
-        <p class="section__eyebrow">Policies</p>
-        <h1 class="policy-hero__title" id="policy-title">Terms of Service</h1>
-        <p class="policy-hero__lead">The terms that govern your use of burrpaw.com and purchases from Burr Paw.</p>
+    <div class="container product-layout">
+      <div class="product-gallery" data-reveal>
+        <div class="product-gallery__stage">
+          <img
+            src="../assets/images/Products/Books/book-a-farm-christmas-morning.jpg"
+            alt="A Farm Christmas Morning"
+            width="990"
+            height="780"
+          >
+        </div>
       </div>
-    </section>
-
-    <nav class="policy-nav" aria-label="Policy pages">
-      <div class="container policy-nav__inner">
-        <a href="refund-policy.html">Refund</a>
-        <a href="shipping-policy.html">Shipping</a>
-        <a href="privacy-policy.html">Privacy</a>
-        <a href="terms-of-service.html" aria-current="page">Terms</a>
+      <div class="product-info" data-reveal>
+        <p class="section__eyebrow">Stephanie White</p>
+        <h1>A Farm Christmas Morning</h1>
+        <p class="price">$20.00</p>
+        <p>A children's picture book about the magic and joyful traditions of rural life. The story follows a young farmer who, while doing her morning chores in the snow, makes a heartwarming discovery: the birth of a new foal.</p>
+        <div class="buy-row">
+          <div class="qty" data-qty>
+            <button type="button" data-qty-minus aria-label="Decrease quantity">−</button>
+            <input type="number" value="1" min="1" aria-label="Quantity">
+            <button type="button" data-qty-plus aria-label="Increase quantity">+</button>
+          </div>
+          <button class="btn btn--blaze" type="button" data-add-to-cart data-product-id="book-a-farm-christmas">Add to Cart</button>
+        </div>
+        <p class="form-note" style="margin-top:1.25rem"><a href="../shop.html#loves-title">Back to shop</a></p>
       </div>
-    </nav>
+    </div>
 
-    <section class="section policy-body">
-      <div class="container policy-body__layout" data-reveal>
-        <article class="policy">
-          <p class="policy__lede">These Terms of Service govern your use of burrpaw.com and the purchase of products offered on the Site.</p>
-          <h2>Overview</h2>
-          <p>By visiting our site and/or purchasing from us, you engage in our service and agree to be bound by these terms.</p>
-          <h2>Products</h2>
-          <p>We reserve the right to limit quantities and to discontinue products at any time. Product images may vary slightly from physical product colors.</p>
-          <p class="policy__note">Full legal copy will be migrated from the live Shopify policy during the premium theme build.</p>
-        </article>
-        <aside class="policy-aside">
-          <p class="policy-aside__label">Need help?</p>
-          <p class="policy-aside__text">Questions about these terms? We’re happy to walk through them with you.</p>
-          <a class="btn btn--dark" href="../contact.html">Contact Us</a>
-        </aside>
+    <section class="section product-related" aria-labelledby="related-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="section__eyebrow">Keep reading</p>
+            <h2 class="section__title" id="related-title">Other amazing readings Burr Paw loves</h2>
+          </div>
+        </div>
+        <div class="shop-books shop-books--related" data-reveal>
+          <article class="shop-book">
+            <a class="shop-book__link" href="the-hunt.html">
+              <div class="shop-book__media">
+                <img src="../assets/images/Products/Books/book-the-hunt.jpg" alt="The Hunt" width="800" height="800" loading="lazy">
+              </div>
+              <div class="shop-book__body">
+                <p class="shop-book__author">Stephanie White</p>
+                <h3 class="shop-book__title">The Hunt</h3>
+              </div>
+            </a>
+            <div class="shop-book__row">
+              <span class="price">$20.00</span>
+              <button class="btn btn--dark" type="button" data-add-to-cart data-qty="1" data-product-id="book-the-hunt">Add to Cart</button>
+            </div>
+          </article>
+          <article class="shop-book">
+            <a class="shop-book__link" href="off-the-roost.html">
+              <div class="shop-book__media">
+                <img src="../assets/images/Products/Books/book-off-the-roost.jpg" alt="Off The Roost" width="800" height="800" loading="lazy">
+              </div>
+              <div class="shop-book__body">
+                <p class="shop-book__author">Stephanie White</p>
+                <h3 class="shop-book__title">Off The Roost</h3>
+              </div>
+            </a>
+            <div class="shop-book__row">
+              <span class="price">$20.00</span>
+              <button class="btn btn--dark" type="button" data-add-to-cart data-qty="1" data-product-id="book-off-the-roost">Add to Cart</button>
+            </div>
+          </article>
+          <article class="shop-book">
+            <a class="shop-book__link" href="the-flight.html">
+              <div class="shop-book__media">
+                <img src="../assets/images/Products/Books/book-the-flight.jpg" alt="The Flight" width="800" height="800" loading="lazy">
+              </div>
+              <div class="shop-book__body">
+                <p class="shop-book__author">Stephanie White</p>
+                <h3 class="shop-book__title">The Flight</h3>
+              </div>
+            </a>
+            <div class="shop-book__row">
+              <span class="price">$20.00</span>
+              <button class="btn btn--dark" type="button" data-add-to-cart data-qty="1" data-product-id="book-the-flight">Add to Cart</button>
+            </div>
+          </article>
+          <article class="shop-book">
+            <a class="shop-book__link" href="field-notes-hunting-journal.html">
+              <div class="shop-book__media">
+                <img src="../assets/images/Products/Books/book-field-notes-hunting-journal.jpg" alt="Field Notes | Hunting Journal" width="800" height="800" loading="lazy">
+              </div>
+              <div class="shop-book__body">
+                <p class="shop-book__author">Journal</p>
+                <h3 class="shop-book__title">Field Notes | Hunting Journal</h3>
+              </div>
+            </a>
+            <div class="shop-book__row">
+              <span class="price">$20.00</span>
+              <button class="btn btn--dark" type="button" data-add-to-cart data-qty="1" data-product-id="book-field-notes">Add to Cart</button>
+            </div>
+          </article>
+          <article class="shop-book">
+            <a class="shop-book__link" href="the-winter-cowboy.html">
+              <div class="shop-book__media">
+                <img src="../assets/images/Products/Books/book-the-winter-cowboy.jpg" alt="The Winter Cowboy" width="990" height="780" loading="lazy">
+              </div>
+              <div class="shop-book__body">
+                <p class="shop-book__author">Stephanie White</p>
+                <h3 class="shop-book__title">The Winter Cowboy</h3>
+              </div>
+            </a>
+            <div class="shop-book__row">
+              <span class="price">$20.00</span>
+              <button class="btn btn--dark" type="button" data-add-to-cart data-qty="1" data-product-id="book-the-winter-cowboy">Add to Cart</button>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -118,10 +199,10 @@
         <div>
           <h4 class="footer-heading">Policies</h4>
           <ul class="footer-links">
-            <li><a href="refund-policy.html">Refund Policy</a></li>
-            <li><a href="shipping-policy.html">Shipping Policy</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../policies/refund-policy.html">Refund Policy</a></li>
+            <li><a href="../policies/shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="../policies/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../policies/terms-of-service.html">Terms of Service</a></li>
           </ul>
         </div>
         <div>
@@ -160,5 +241,6 @@
   <script src="../js/products.js" defer></script>
   <script src="../js/cart.js" defer></script>
   <script src="../js/main.js" defer></script>
+
 </body>
 </html>
