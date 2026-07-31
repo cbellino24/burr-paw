@@ -5388,6 +5388,34 @@ body.is-nl-popup-open {
   border-top: 1px solid var(--line);
 }
 
+.contact-faq--compact {
+  padding: clamp(1.75rem, 3.5vw, 2.75rem) 0;
+}
+
+.contact-faq--compact .contact-faq__inner {
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.contact-faq--compact .section__title {
+  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+}
+
+.contact-faq--compact .section__lead {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.contact-faq--compact .contact-faq__item summary {
+  padding: 0.85rem 2rem 0.85rem 0;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+.contact-faq--compact .contact-faq__item p {
+  margin: 0 0 0.95rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .contact-faq__inner {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -5397,6 +5425,15 @@ body.is-nl-popup-open {
 
 .contact-faq__intro .section__title {
   max-width: 14ch;
+}
+
+.contact-faq__intro .section__lead a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+}
+
+.contact-faq__intro .section__lead a:hover {
+  color: var(--blaze);
 }
 
 .contact-faq__list {
