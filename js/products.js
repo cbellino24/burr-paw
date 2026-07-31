@@ -68,5 +68,23 @@ window.BURR_PAW_PRODUCTS = {
     image: "assets/images/Products/Books/book-field-notes-hunting-journal.jpg",
     url: "products/field-notes-hunting-journal.html",
     shopifyVariantId: null
+  },
+  "book-a-farm-christmas": {
+    id: "book-a-farm-christmas",
+    handle: "a-farm-christmas-morning",
+    title: "A Farm Christmas Morning",
+    price: 20,
+    image: "assets/images/Products/Books/book-a-farm-christmas-morning.jpg",
+    url: "products/a-farm-christmas-morning.html",
+    shopifyVariantId: null
+  },
+  "book-the-winter-cowboy": {
+    id: "book-the-winter-cowboy",
+    handle: "the-winter-cowboy",
+    title: "The Winter Cowboy",
+    price: 20,
+    image: "assets/images/Products/Books/book-the-winter-cowboy.jpg",
+    url: "products/the-winter-cowboy.html",
+    shopifyVariantId: null
   }
 };

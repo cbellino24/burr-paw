@@ -1,6 +1,49 @@
 (function () {
   "use strict";
 
+  function initDealerCount() {
+    var el = document.querySelector("[data-dealer-count]");
+    if (!el) return;
+    var locations =
+      (window.BURR_PAW_LOCATIONS && window.BURR_PAW_LOCATIONS.locations) || [];
+    var target = locations.length || 0;
+    if (!target) {
+      el.textContent = "0";
+      return;
+    }
+
+    var duration = 5000;
+    var start = null;
+    var reduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      el.textContent = String(target);
+      return;
+    }
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function frame(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min(1, (ts - start) / duration);
+      var value = Math.max(1, Math.round(easeOutCubic(progress) * target));
+      el.textContent = String(value);
+      if (progress < 1) {
+        window.requestAnimationFrame(frame);
+      } else {
+        el.textContent = String(target);
+      }
+    }
+
+    el.textContent = "1";
+    window.requestAnimationFrame(frame);
+  }
+
+  initDealerCount();
+
   var mapEl = document.getElementById("location-map");
   if (!mapEl || typeof L === "undefined") return;
 

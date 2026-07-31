@@ -164,6 +164,11 @@
 
     function setWatching(on) {
       hero.classList.toggle("is-watching", on);
+      var copy = hero.querySelector(".hero-video__copy");
+      if (copy) {
+        if (on) copy.setAttribute("aria-hidden", "true");
+        else copy.removeAttribute("aria-hidden");
+      }
       if (restoreBtn) {
         if (on) restoreBtn.removeAttribute("hidden");
         else restoreBtn.setAttribute("hidden", "");

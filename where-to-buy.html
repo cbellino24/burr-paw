@@ -61,26 +61,15 @@
 
   <main>
     <section class="contact-mast" aria-labelledby="buy-title">
-      <div class="container contact-mast__inner">
-        <p class="contact-mast__eyebrow">Dealer locator</p>
-        <h1 class="contact-mast__title" id="buy-title">Where to buy.</h1>
-        <p class="contact-mast__lead">Find Burr Paw at retail partners across the country, or shop direct online. Flat-rate shipping is $7.50, with free shipping on orders of $50+.</p>
-      </div>
-    </section>
-
-    <section class="contact-channels" aria-label="Buying options">
-      <div class="container contact-channels__grid">
-        <div class="contact-channel contact-channel--static">
-          <span class="contact-channel__label">In store</span>
-          <span class="contact-channel__value">Search by city or zip</span>
+      <div class="container contact-mast__inner contact-mast__inner--split">
+        <div class="contact-mast__copy">
+          <p class="contact-mast__eyebrow">Find Burr Paw</p>
+          <h1 class="contact-mast__title" id="buy-title">WHERE TO BUY</h1>
+          <p class="contact-mast__lead">Find Burr Paw at retail partners across the country, or shop direct online. Flat-rate shipping is $7.50, with free shipping on orders of $50+.</p>
         </div>
-        <a class="contact-channel" href="shop.html">
-          <span class="contact-channel__label">Online</span>
-          <span class="contact-channel__value">Ship straight to your door</span>
-        </a>
-        <div class="contact-channel contact-channel--static">
-          <span class="contact-channel__label">130+ dealers</span>
-          <span class="contact-channel__value">Scheels, Theisen’s, and independents</span>
+        <div class="dealer-count" aria-live="polite">
+          <p class="dealer-count__number"><span data-dealer-count>0</span></p>
+          <p class="dealer-count__label">retail partners nationwide</p>
         </div>
       </div>
     </section>
@@ -158,6 +147,7 @@
           <img src="assets/images/dealers/buds-gun-shop.png" alt="Bud’s Gun Shop" width="200" height="200" loading="lazy">
           <img src="assets/images/dealers/simmons-sporting-goods.png" alt="Simmons’ Sporting Goods" width="200" height="200" loading="lazy">
           <img src="assets/images/dealers/true-value.png" alt="True Value" width="281" height="117" loading="lazy">
+          <img src="assets/images/dealers/family-center-farm-home.png" alt="Family Center Farm &amp; Home" width="640" height="220" loading="lazy">
         </div>
         <div class="dealer-logo-marquee__group" aria-hidden="true">
           <img src="assets/images/dealers/scheels.png" alt="" width="200" height="200" loading="lazy">
@@ -167,6 +157,7 @@
           <img src="assets/images/dealers/buds-gun-shop.png" alt="" width="200" height="200" loading="lazy">
           <img src="assets/images/dealers/simmons-sporting-goods.png" alt="" width="200" height="200" loading="lazy">
           <img src="assets/images/dealers/true-value.png" alt="" width="281" height="117" loading="lazy">
+          <img src="assets/images/dealers/family-center-farm-home.png" alt="" width="640" height="220" loading="lazy">
         </div>
       </div>
     </section>
@@ -286,7 +277,7 @@
     </div>
     <div class="footer-newsletter">
       <div class="footer-newsletter__inner">
-        <label class="footer-newsletter__label" for="footer-email">Field notes in your inbox</label>
+        <label class="footer-newsletter__label" for="footer-email">Sign up for our newsletter</label>
         <form class="footer-newsletter__fields" data-demo-form>
           <input class="footer-newsletter__input" id="footer-email" type="email" name="email" placeholder="Email address" required autocomplete="email">
           <button class="footer-newsletter__submit" type="submit">Subscribe</button>
