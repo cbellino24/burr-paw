@@ -922,11 +922,12 @@ body.is-nav-open .site-top {
   position: absolute;
   right: 0;
   top: 50%;
-  width: 0.35rem;
-  height: 0.35rem;
-  border-radius: 50%;
-  background: var(--blaze);
-  transform: translateY(-50%);
+  width: 0.78em;
+  height: 0.78em;
+  background-color: var(--blaze);
+  -webkit-mask: var(--bullet-burr) center / contain no-repeat;
+  mask: var(--bullet-burr) center / contain no-repeat;
+  transform: translate(50%, -50%);
 }
 
 @keyframes marqueeScroll {
