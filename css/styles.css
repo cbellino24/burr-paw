@@ -1326,24 +1326,35 @@ body.is-nav-open .site-top {
   width: min(1180px, calc(100% - 2.5rem));
   margin-inline: auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(1.75rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 4.5vw, 4rem);
   align-items: center;
+}
+
+.demo__copy {
+  display: grid;
+  gap: 0.35rem;
+  align-content: center;
+  justify-items: start;
+  min-height: 100%;
+  padding-block: 0.5rem;
 }
 
 .demo .section__eyebrow {
   color: var(--blaze);
+  font-size: 0.82rem;
+  margin: 0 0 0.35rem;
 }
 
 .demo__title {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 4vw, 2.85rem);
+  font-size: clamp(2.35rem, 5.5vw, 3.75rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  margin: 0 0 0.85rem;
-  line-height: 1.05;
-  max-width: 18ch;
+  margin: 0;
+  line-height: 0.98;
+  max-width: 11ch;
 }
 
 .demo__lead {
@@ -1377,7 +1388,8 @@ body.is-nav-open .site-top {
 .text-link--on-dark {
   color: #fff;
   border-bottom-color: rgba(255, 255, 255, 0.45);
-  margin-top: 1.35rem;
+  margin-top: 1.65rem;
+  font-size: 0.82rem;
 }
 
 .text-link--on-dark:hover {
@@ -4617,6 +4629,8 @@ body.is-nav-open .site-top {
   font-family: var(--font-display);
   font-size: 1.15rem;
   color: var(--paper);
+  max-width: 22rem;
+  line-height: 1.25;
 }
 
 .footer-newsletter__fields {
@@ -6323,13 +6337,13 @@ body.is-nl-popup-open {
   }
 
   .demo__inner {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2.25rem;
     align-items: center;
   }
 
   .demo__title {
-    max-width: none;
+    max-width: 12ch;
   }
 
   .product-layout {
@@ -6988,16 +7002,15 @@ body.home .section.section--white:has(.pitch) {
 }
 
 body.home .demo {
-  padding: clamp(2.25rem, 5vw, 4rem) 0;
+  padding: clamp(3rem, 6.5vw, 5.25rem) 0;
 }
 
 body.home .demo__title {
-  margin-bottom: 0.5rem;
-  max-width: 14ch;
+  max-width: 11ch;
 }
 
 body.home .text-link--on-dark {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 body.home .logo-band {
